@@ -26,7 +26,7 @@ foo <- function(arma = FALSE) {
       )
       remove.packages("dynr")
     }
-    writeRDS(count_update, file = fn)
+    saveRDS(count_update, file = fn)
   }
 }
 foo(arma = TRUE)

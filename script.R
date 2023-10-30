@@ -8,7 +8,7 @@ foo <- function(arma = FALSE) {
   }
   install.packages(
     "jsonlite",
-    repos = "http://cran.us.r-project.org"
+    repos = c(CRAN = "http://cran.rstudio.com")
   )
   if (file.exists(fn)) {
     count <- readRDS(fn)
@@ -22,12 +22,10 @@ foo <- function(arma = FALSE) {
     for (i in 1:count_update) {
       install.packages(
         "dynr",
-        repos = "http://cran.us.r-project.org"
+        repos = c(CRAN = "http://cran.rstudio.com")
       )
       remove.packages("dynr")
     }
     saveRDS(count_update, file = fn)
   }
 }
-foo(arma = TRUE)
-foo(arma = FALSE)

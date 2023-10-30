@@ -25,7 +25,7 @@ jobs:
       -
         name: Run
         run: |
-          Rscript -e "source(\"script.R\"); foo(arma = TRUE)"
+          Rscript -e "source(\"script.R\"); foo(arma = TRUE); foo(arma = FALSE)"
       - 
         name: Commit and push changes
         uses: devops-infra/action-commit-push@master

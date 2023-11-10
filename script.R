@@ -5,18 +5,6 @@ foo <- function(image) {
   if (image == "jeksterslab-dynr-arma-rocker") {
     url <- "https://hub.docker.com/v2/repositories/jeksterslab/dynr-arma-rocker"
   }
-  if (image == "ijapesigan-rocker") {
-    url <- "https://hub.docker.com/v2/repositories/ijapesigan/rocker"
-  }
-  if (image == "ijapesigan-docs") {
-    url <- "https://hub.docker.com/v2/repositories/ijapesigan/docs"
-  }
-  if (image == "ijapesigan-rarch") {
-    url <- "https://hub.docker.com/v2/repositories/ijapesigan/rarch"
-  }
-  if (image == "ijapesigan-r2u") {
-    url <- "https://hub.docker.com/v2/repositories/ijapesigan/r2u"
-  }
   fn <- paste0(image, ".Rds")
   install.packages(
     "jsonlite",
@@ -38,6 +26,15 @@ foo <- function(image) {
       )
       remove.packages(
         "dynr"
+      )
+      print(
+        paste0(
+          "Download ",
+          i,
+          " out of ",
+          count_update,
+          ".\n"
+        )
       )
     }
     saveRDS(count_update, file = fn)

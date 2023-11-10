@@ -29,11 +29,11 @@ foo <- function(image) {
       )
       print(
         paste0(
-          "Download ",
+          "\n\n\nDownload ",
           i,
           " out of ",
           count_update,
-          ".\n"
+          ".\n\n\n"
         )
       )
     }
